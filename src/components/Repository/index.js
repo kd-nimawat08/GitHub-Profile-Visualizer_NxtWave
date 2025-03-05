@@ -63,7 +63,7 @@ class Repository extends Component {
 
     this.setState({apiStatus: apiStatusConstants.inProgress})
 
-    const url = `https://apis2.ccbp.in/gpv/repos/${username}?api_key=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`
+    const url = `https://apis2.ccbp.in/gpv/repos/${username}?api_key=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`
     const options = {
       method: 'GET',
     }
@@ -278,3 +278,4 @@ class Repository extends Component {
   }
 }
 export default Repository
+
