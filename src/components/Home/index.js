@@ -26,7 +26,6 @@ const apiStatusConstants = {
 class Home extends Component {
   state = {
     profileDetails: [],
-    /* username: '', */
     isError: false,
     errorMsg: '',
     apiStatus: apiStatusConstants.initial,
@@ -41,7 +40,7 @@ class Home extends Component {
 
     this.setState({apiStatus: apiStatusConstants.inProgress})
 
-    const GitHubUserProfileUrl = `https://apis2.ccbp.in/gpv/profile-details/${username}?api_key=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`
+    const GitHubUserProfileUrl = `https://apis2.ccbp.in/gpv/profile-details/${username}?api_key=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`
     const options = {
       method: 'GET',
     }
@@ -93,10 +92,6 @@ class Home extends Component {
     }
   }
 
-  /* onChangeUserName = event => {
-    this.setState({username: event.target.value})
-  } */
-
   onClickSearch = () => {
     const {username} = this.props
     if (username === '') {
@@ -107,7 +102,12 @@ class Home extends Component {
       })
     } else {
       this.getGitHubUserProfileDetails()
-      this.setState({isError: false, errorMsg: ''})
+      this.setState({
+        apiStatus: apiStatusConstants.inProgress,
+        isError: false,
+        errorMsg: '',
+        profileDetails: [],
+      })
     }
   }
 
@@ -186,6 +186,12 @@ class Home extends Component {
   }
 
   onClickTryAgain = () => {
+    this.setState({
+      apiStatus: apiStatusConstants.inProgress,
+      isError: false,
+      errorMsg: '',
+      profileDetails: [],
+    })
     this.getGitHubUserProfileDetails()
   }
 
@@ -227,11 +233,6 @@ class Home extends Component {
         return null
     }
   }
-
-  /*  onChangeUserName = event => {
-    const {changeUserName} = this.props
-    changeUserName(event.target.value)
-  } */
 
   render() {
     return (
@@ -315,3 +316,4 @@ class Home extends Component {
   }
 }
 export default Home
+
