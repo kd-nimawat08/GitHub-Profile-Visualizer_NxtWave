@@ -183,6 +183,13 @@ class Repository extends Component {
           <>
             <h1 className="repositorySuccessHeading">Repositories</h1>
             <div className="repositorySuccessListContainer">
+              <h1>
+                <span> {repositoriesList[0].owner.login}</span>
+              </h1>
+              <img
+                src={repositoriesList[0].owner.avatarUrl}
+                alt={repositoriesList[0].owner.login}
+              />
               {repositoriesList.map(eachRepository => (
                 <RepositoryCard
                   repositoryDetails={eachRepository}
@@ -278,4 +285,3 @@ class Repository extends Component {
   }
 }
 export default Repository
-
