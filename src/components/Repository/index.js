@@ -278,7 +278,6 @@ class Repository extends Component {
           {username === ''
             ? this.renderNoDataFound()
             : this.renderGitRepositoryDetails()}
-          {/* {this.renderGitRepositoryDetails()} */}
         </div>
       </>
     )
