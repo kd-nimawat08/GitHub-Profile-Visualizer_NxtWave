@@ -10,9 +10,9 @@ const RepositoryCard = props => {
     languages,
     stargazersCount,
     forksCount,
-    owner,
+    // owner,
   } = repositoryDetails
-  const {avatarUrl, login} = owner
+  // const {avatarUrl, login} = owner
 
   return (
     <Link to={`/repositories/${name}`} className="repoLinkContainer">
@@ -20,7 +20,7 @@ const RepositoryCard = props => {
         <div className={` repositoryItemContainer`} data-testid="repoItem">
           <div className="repoHeaderContainer">
             <h1 className="repoItemHeading">{name}</h1>
-            <img src={avatarUrl} alt={login} className="repoAvatarUrl" />
+            {/* <img src={avatarUrl} alt={login} className="repoAvatarUrl" /> */}
           </div>
 
           <p className="repoItemDesc">{description}</p>
