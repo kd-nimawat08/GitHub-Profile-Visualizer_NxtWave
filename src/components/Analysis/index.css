@@ -3,7 +3,7 @@
   background-color: #0f172a;
 }
 .testcaseContainer {
-  width: 100%;
+  width: {100};
   padding-top: 20px;
 }
 
